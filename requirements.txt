@@ -1,0 +1,6 @@
+Flask
+Flask-Mail
+Flask-SQLAlchemy
+Flask-Bcrypt
+Flask-Login
+fpdf

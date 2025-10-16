@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reschedule Event</title>
+    <style>
+        /* Background GIF */
+        body {
+            background: url('https://i.pinimg.com/originals/ad/3a/a1/ad3aa168b76a1846c56edad68c218242.gif') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Card Style */
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        /* Input Fields */
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Booking Details */
+        .booking-details {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: left;
+            font-size: 16px;
+            border: 1px solid #ddd;
+        }
+
+        .booking-details span {
+            font-weight: bold;
+        }
+
+        /* Button */
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Reschedule Event</h2>
+
+    <!-- Display Event Details -->
+    <div class="booking-details">
+        <p><span>Event Name:</span> {{ event.name }}</p>
+        <p><span>Original Date:</span> {{ event.date }}</p>
+        <p><span>Original Time:</span> {{ event.time }}</p>
+        <p><span>Original Venue:</span> {{ event.venue }}</p>
+    </div>
+
+    <!-- Display Student Booking Details -->
+    {% if student %}
+        <div class="booking-details">
+            <p><span>Student Name:</span> {{ student.name }}</p>
+            <p><span>Student Email:</span> {{ student.email }}</p>
+            <p><span>Student College:</span> {{ student.college_name }}</p>
+        </div>
+    {% else %}
+        <div class="booking-details">
+            <p>No student has booked this event yet.</p>
+        </div>
+    {% endif %}
+
+    <!-- Reschedule Form -->
+    <form method="POST">
+        <label for="date">New Date:</label>
+        <input type="date" name="date" value="{{ event.date }}" required>
+
+        <label for="time">New Time:</label>
+        <input type="time" name="time" value="{{ event.time }}" required>
+
+        <label for="venue">New Venue:</label>
+        <input type="text" name="venue" value="{{ event.venue }}" required>
+
+        <button type="submit">Update Event</button>
+    </form>
+</div>
+
+</body>
+</html>

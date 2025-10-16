@@ -1,0 +1,8 @@
+workflow
+      
+
+steps for run:
+
+1.open project and set project path on cmd
+2.run commend * python app.py*
+3.copy url and past to servers

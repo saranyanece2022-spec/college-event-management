@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Event Management System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('https://i.pinimg.com/originals/1c/52/ad/1c52ad6349a6c1433f29663964d4d6ab.gif') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            animation: fadeInDown 1.5s ease-in-out;
+        }
+
+        .lead {
+            font-size: 1.5rem;
+            margin-bottom: 50px;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        .btn {
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 10px 25px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-danger {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
+            border: none;
+        }
+
+        .btn-success {
+            background: linear-gradient(45deg, #00b09b, #96c93d);
+            border: none;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h1 class="mt-5">Welcome to College Event Management System</h1>
+        <p class="lead">Choose your login type to get started:</p>
+
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Admin Login</h3>
+                        <p>Manage events, approve bookings, and oversee operations.</p>
+                        <a href="{{ url_for('admin_login') }}" class="btn btn-danger">Login as Admin</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Student Login</h3>
+                        <p>Register, view events, book events, and track status.</p>
+                        <a href="{{ url_for('login') }}" class="btn btn-primary">Login as Student</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">student Register</h3>
+                        <p>Create and manage events, handle registrations.</p>
+                        <a href="{{ url_for('register') }}" class="btn btn-success">Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Content -->
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <h2>Why Choose Us?</h2>
+                <p class="lead">Our platform offers seamless event management, real-time updates, and a user-friendly interface for students, organizers, and administrators.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
