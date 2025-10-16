@@ -4,3 +4,4 @@ Flask-SQLAlchemy
 Flask-Bcrypt
 Flask-Login
 fpdf
+gunicorn
